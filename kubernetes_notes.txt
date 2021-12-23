@@ -1,0 +1,108 @@
+Here will be some notes about kubernetes :)
+
+Kubernetes - K8s
+
+>Open Source Project
+>From Google on GO lang
+>From 2014 year
+
+Kubernets helps:
+>Automatization to lauch your apps
+>Automatization to expand your apps
+>Automatization to menage your apps
+
+Main component K8s it's => Cluster
+
+You are creating cluster from nodes
+
+Types of Nodes:
+>Worker Node - on this server will launch all your containers
+>Master Node - this server manages Workers Nodes (they always sends to Master Node)
+
+Master Node - on this server works 3 main processes:
+>kube-apiserver
+>kube-controller-manager
+>kube-scheduler
+
+Worker Node - on this server work 2 main processes:
+
+>kubelet (kubelet works with kube-apiserver)
+>kube-proxy (network interface of every server)
+
+Cluster (minimum): K8s Master Node and K8s Worker Node
+
+Why Kubernetes popular:
+
+Service discovery and load balancing:
+Kubernetes can expose a container using the DNS name or using their own IP address. IF traffic to a container is high, Kubernetes is able to load balance
+and distribute the network traffic so that the deployment is stable
+
+If you run your Docker container in K8s Cluster. K8s give you access to this Docker Container throw IP address, throw current port on some Worker Node
+or DNS name, also if you run some copies of your Docker Container, K8s make Load Balancing between this containers
+
+Storage orchestration:
+Kubernetes allows you to automatically mount a storage system of your choice, such as local storages, public cloud providers, and more.
+
+EXAMPLE:
+You can attach every local disk or AWS,GCP disk to one or more Docker containers 
+
+Automated rollouts and rollbacks
+You can describe the desired state for your deployed containers using Kubernetes, and it can change the actual state of the desired state at a
+controlled rate. For example, you can automate Kubernetes to create new containers for your deployment, remove existing containers and adopt all
+ther resources to the new container.
+
+EXAMPLE:
+Automated update on a new version of Docker Image or return to previous :)
+
+Automatic bin packing:
+You provide Kubernetes with a cluster of nodes that it can use to run containerized tasks. You tell Kubernetes how much CPU and memory (RAM)
+each container needs.
+Kubernetes can fit containers onto your nodes to make the best use of your resources.
+
+EXAMPLE:
+You are creating K8s Cluster where K8s can run Docker Containers
+You select amount of CPU and RAM you need to every copy of Docker Container for normal work, K8s makes best solutions on which Worker Node run your
+Docker Containers
+
+Self-healing
+Kubernetes restarts containers that fail, replaces containers, kills containers that don't respond to your user-defined health check, and doesn't advertise
+them to clients until they are ready to serve.
+
+EXAMPLE:
+You select how much copy you need of your Docker Container. If something wrong with yours Container, k8s will check and replace on the works Containers
+
+Secret and configuration managment:
+Kubernetes lets you store and manage sensitive information, such as passwords, OAuth tokens, and SSH keys. You can deploy and update secrets and
+application configuration without rebuilding your container images, and without exposing secrets in your stack configuration.
+
+K8s give opportunity to store your passwords, not in your Docker Container
+
+
+
+Kubernetes Cloud Services
+EKS - (Amazon Elastic Kubernetes Service)
+GKE - (Google Kubernetes Engine)
+Azure - (Azure Kubernetes Service) AKS
+ 
+============================================================================================
+
+3 apps for manage kubernetes:
+
+>VirtualBox
+>Kubectl - for manage K8s Clusters
+>Minicube - for creating K8s Cluster Single-Node, cluster from one Node optimzed for tests.
+
+Download kubectl
+Download minicube-amd.exe => rename to minikube.exe
+
+then add to Path fodler with kubectl.exe and minikube.exe
+
+>minikube start (On windows if you have Running Docker then it's will works insied a Docker Container)
+>kubectl get componentstatuses (to check is all components are healthy)
+>kubectl get nodes (check available nodes)
+
+
+
+
+
+
