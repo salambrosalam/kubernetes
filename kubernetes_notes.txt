@@ -101,6 +101,19 @@ then add to Path fodler with kubectl.exe and minikube.exe
 >kubectl get componentstatuses (to check is all components are healthy)
 >kubectl get nodes (check available nodes)
 
+=========================================================================================
+
+Main objects in K8s
+
+0.Container
+1.Pod - in pod we have 1 or more containers
+2.Deployment - 1 or more copies of Pods
+3.Service - access to pods in deployments
+4.Nodes - servers
+5.Cluster - union of servers
+
+
+
 
 
 
